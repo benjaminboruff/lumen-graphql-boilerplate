@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Passport\HasApiTokens;
 
-class User extends Model
+class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
-    # use IsRelayConnection, HasApiTokens, Authenticatable, Authorizable;
+    use HasApiTokens, Authenticatable, Authorizable;
     /**
      * The attributes that are mass assignable.
      *
